@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
 
-interface TopStoriesProps {
+interface VerticalStoriesProps {
   source: any,
   url: string,
   title: string
@@ -9,8 +9,8 @@ interface TopStoriesProps {
   urlToImage: string
 }
 
-const Index = (topStory: TopStoriesProps) => {
-  const { source, url, title, publishedAt, urlToImage } = topStory;
+const Index = (verticalStory: VerticalStoriesProps) => {
+  const { source, url, title, publishedAt, urlToImage } = verticalStory;
   const [btnText, setBtnText] = useState("Read Later");
 
   const storeNews = (item: any) => {
@@ -34,46 +34,42 @@ const Index = (topStory: TopStoriesProps) => {
 
   const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
   event.preventDefault();
-  storeNews(topStory);
+  storeNews(verticalStory);
 };
 
-  return (
-    <div className="card mb-3">
-  <div className="row g-0">
-    <div className="col-md-8">
-      <div className="card-body">
-        <p className="text-muted mb-1">
-              { source.name }
-        </p>
-        <h5 className="card-title">
-          <Link
-            // to={ "/" }
-            to={ url }
-            className="text-dark text-decoration-none text-underline-hover"
-              >
-                { title}
+  return (      
+    <div className="card h-100">
+  <img
+    src={urlToImage }
+    // onerror="this.src='assets/Images/newsIm.jpg';"
+    className="card-img-top"
+    alt="..."
+  />
+  <div className="card-body">
+    <p className="text-muted mb-1">
+      {source.name }
+    </p>
+    <h5 className="card-title">
+      <a
+        href= {url }
+        className="text-dark text-decoration-none text-underline-hover"
+      >
+        {title}
+        {/* {{ item.title | truncate }} */}
+      </a>
+    </h5>
 
-              </Link>
-        </h5>
-
-        <p className="card-text my-3 text-muted">
-              { publishedAt}
-        </p>
-            <Link to={"#"} className="btn btnColor" onClick={handleClick}>
-              {btnText}
-            </Link>
-      </div>
-    </div>
-    <div className="col-md-4">
-      <img
-        src={ urlToImage }
-        // onError="this.src='assets/Images/newsIm.jpg';"
-        className="img-fluid rounded-start"
-        alt="..."
-      />
-    </div>
+    <p className="card-text">{title }</p>
+    <p className="card-text my-3 text-muted">
+      {publishedAt}
+      {/* {{ item.publishedAt | date : "short" }} */}
+    </p>
+  </div>
+  <div className="card-footer bg-white border-top-0">
+          <Link to={"#"} className="btn btnColor" onClick={handleClick}> {btnText} </Link>
   </div>
 </div>
+
 
   )
 }

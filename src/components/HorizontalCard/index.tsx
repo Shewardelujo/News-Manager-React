@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
 
-interface TopStoriesProps {
+interface HorizontalStoriesProps {
   source: any,
   url: string,
   title: string
@@ -9,8 +9,8 @@ interface TopStoriesProps {
   urlToImage: string
 }
 
-const Index = (topStory: TopStoriesProps) => {
-  const { source, url, title, publishedAt, urlToImage } = topStory;
+const Index = (horizontalStory: HorizontalStoriesProps) => {
+  const { source, url, title, publishedAt, urlToImage } = horizontalStory;
   const [btnText, setBtnText] = useState("Read Later");
 
   const storeNews = (item: any) => {
@@ -34,7 +34,7 @@ const Index = (topStory: TopStoriesProps) => {
 
   const handleClick: React.MouseEventHandler<HTMLAnchorElement> = (event) => {
   event.preventDefault();
-  storeNews(topStory);
+  storeNews(horizontalStory);
 };
 
   return (
