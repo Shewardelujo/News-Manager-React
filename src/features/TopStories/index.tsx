@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { fetchTopStories } from "./topStoriesSlice";
-// import HorizontalCard from "../../components/HorizontalCard";
+import HorizontalCard from "../../components/HorizontalCard";
 import VerticalCard from "../../components/VerticalCard";
 
 const Index = () => {
