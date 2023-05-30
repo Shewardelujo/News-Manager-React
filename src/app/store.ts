@@ -1,7 +1,10 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import topStoriesSlice from "../features/TopStories/topStoriesSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    topStories: topStoriesSlice,
+  },
 });
 
 export type AppDispatch = typeof store.dispatch;

@@ -1,6 +1,6 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HorizontalCard from './components/HorizontalCard';
+import TopStories from './features/TopStories';
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
     <div className='App'>
         <Routes>
-          <Route path='/' element={<HorizontalCard/>}></Route>
+          <Route path='/' element={<TopStories/>}></Route>
       </Routes>
     </div>
   </BrowserRouter>

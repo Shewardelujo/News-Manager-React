@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+ body {
+   min-height: 100vh;
+ }
+
+ .btnColor {
+   background-color: rgb(86, 24, 24);
+   color: white;
+ }
+
+ .btnColor:hover {
+   background-color: rgb(86, 24, 24);
+   color: white;
+ }
+
+ .btnColorr {
+   background-color: rgb(86, 24, 24);
+   color: white;
+ }
