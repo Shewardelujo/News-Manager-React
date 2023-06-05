@@ -1,9 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import topStoriesSlice from "../features/TopStories/topStoriesSlice";
+import healthSlice from "../features/Health/healthSlice";
 
 export const store = configureStore({
   reducer: {
     topStories: topStoriesSlice,
+    health: healthSlice,
   },
 });
 

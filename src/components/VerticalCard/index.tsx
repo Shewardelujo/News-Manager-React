@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom"
+import NewsImage from "../../assets/Images/newsIm.jpg";
+
 
 interface VerticalStoriesProps {
   source: any,
@@ -40,8 +42,7 @@ const Index = (verticalStory: VerticalStoriesProps) => {
   return (      
     <div className="card h-100">
   <img
-    src={urlToImage }
-    // onerror="this.src='assets/Images/newsIm.jpg';"
+    src={urlToImage ? urlToImage : NewsImage}
     className="card-img-top"
     alt="..."
   />
